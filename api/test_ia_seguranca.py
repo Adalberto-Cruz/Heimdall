@@ -123,12 +123,16 @@ class TesteFiltroTreino(unittest.TestCase):
             ia_seguranca.filtrar_jsonl_para_treino(os.path.join(self.pasta, "nada.jsonl"), self.saida)
 
     def test_jsonl_oficial_passa_inteiro(self):
-        oficial = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "dados", "leituras_sensores.jsonl")
+        pasta = os.path.dirname(os.path.abspath(__file__))
+        oficial = os.path.join(pasta, "dados", "leituras_sensores.jsonl")
+        if not os.path.exists(oficial):
+            oficial = os.path.join(pasta, "..", "dados", "leituras_sensores.jsonl")
         if not os.path.exists(oficial):
             self.skipTest("arquivo oficial nao encontrado")
         r = ia_seguranca.filtrar_jsonl_para_treino(oficial, self.saida)
+        # tudo que a API gravou tem que passar no filtro
         self.assertEqual(r["descartadas"], 0)
-        self.assertEqual(r["aceitas"], 50)
+        self.assertGreaterEqual(r["aceitas"], 50)
 
 
 if __name__ == "__main__":

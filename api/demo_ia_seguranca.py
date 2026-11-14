@@ -64,7 +64,10 @@ def main():
     titulo("3. Filtro do JSONL antes do treino do ML (contra dados envenenados)")
     entrada = os.path.join(PASTA, "leituras_para_treino.jsonl")
     saida = os.path.join(PASTA, "leituras_limpas.jsonl")
-    oficial = os.path.join(config.PASTA_BASE, "..", "dados", "leituras_sensores.jsonl")
+    # procura o arquivo oficial na pasta dados/ da API ou na dados/ da raiz do repositorio
+    oficial = config.ARQUIVO_JSONL
+    if not os.path.exists(oficial):
+        oficial = os.path.join(config.PASTA_BASE, "..", "dados", "leituras_sensores.jsonl")
     linhas = []
     if os.path.exists(oficial):
         with open(oficial, "r", encoding="utf-8") as arq:

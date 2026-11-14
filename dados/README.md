@@ -2,6 +2,8 @@
 
 Responsavel: Danilo Keithi Makiya Nakasone (RM574137)
 
-`leituras_sensores.jsonl` e o arquivo oficial: 50 leituras geradas pela API (`api/gerar_dados.py`), usado no Databricks e na AWS.
-
-Colocar aqui os comandos SQL do Databricks, o passo a passo da AWS e o script e a base da analise estatistica.
+| Arquivo | O que e |
+|---|---|
+| `leituras_sensores.jsonl` | arquivo oficial: 50 leituras geradas pela API (`api/gerar_dados.py`) |
+| `databricks/arquitetura_medalhao.sql` | comandos SQL do Databricks: catalogo, volume, Bronze, Silver e Gold |
+| `databricks/Global_Solution_-_Cognitive_Data_Science_Databricks.pdf` | entrega de Cognitive Data Science |

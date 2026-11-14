@@ -20,8 +20,9 @@ import requests
 
 import seguranca
 
-ANTES = "http://localhost:8000"
-DEPOIS = "http://localhost:8001"
+# 127.0.0.1 e nao localhost: no Windows o localhost tenta IPv6 antes e cada pedido demora uns 2 s
+ANTES = "http://127.0.0.1:8000"
+DEPOIS = "http://127.0.0.1:8001"
 PASTA = os.path.dirname(os.path.abspath(__file__))
 CSV_ANTES = os.path.join(PASTA, "dados_antes", "leituras_sensores.csv")
 CSV_DEPOIS = os.path.join(PASTA, "dados_depois", "leituras_sensores.csv")

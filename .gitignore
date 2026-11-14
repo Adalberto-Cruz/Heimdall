@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.pyc
+dados_antes/
+dados_depois/
+api/dados/
+*.bak
+.ipynb_checkpoints/

@@ -1,8 +1,8 @@
 .env
 __pycache__/
 *.pyc
-dados_antes/
-dados_depois/
+dados_vulneravel/
+dados_seguro/
 api/dados/
 *.bak
 .ipynb_checkpoints/

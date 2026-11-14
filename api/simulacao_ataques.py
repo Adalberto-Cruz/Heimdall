@@ -1,11 +1,11 @@
-# validador_ataques_cyber.py
+# simulacao_ataques.py
 # Dispara os mesmos ataques contra a versao sem protecao (ANTES, porta 8000)
 # e contra a versao blindada (DEPOIS, porta 8001) e monta a tabela comparativa.
 #
 # Antes de rodar, em dois terminais:
-#   python rodar_antes.py
-#   python rodar_depois.py
-# Depois: python validador_ataques_cyber.py
+#   python servidor.py --modo vulneravel
+#   python servidor.py --modo seguro
+# Depois: python simulacao_ataques.py
 # (se rodar de novo, espere 1 minuto por causa do limite de requisicoes)
 #
 # Os ataques sao inspirados nos casos reais de 2026 em que hackers mexeram
@@ -24,9 +24,9 @@ import seguranca
 ANTES = "http://127.0.0.1:8000"
 DEPOIS = "http://127.0.0.1:8001"
 PASTA = os.path.dirname(os.path.abspath(__file__))
-CSV_ANTES = os.path.join(PASTA, "dados_antes", "leituras_sensores.csv")
-CSV_DEPOIS = os.path.join(PASTA, "dados_depois", "leituras_sensores.csv")
-LOG_DEPOIS = os.path.join(PASTA, "dados_depois", "auditoria_seguranca.log")
+CSV_ANTES = os.path.join(PASTA, "dados_vulneravel", "leituras_sensores.csv")
+CSV_DEPOIS = os.path.join(PASTA, "dados_seguro", "leituras_sensores.csv")
+LOG_DEPOIS = os.path.join(PASTA, "dados_seguro", "auditoria_seguranca.log")
 RESULTADO_MD = os.path.join(PASTA, "resultado_validacao.md")
 
 # o validador faz o papel do ESP32 legitimo, por isso le as mesmas chaves do .env
@@ -88,7 +88,7 @@ def conferir_apis():
             requests.get(url + "/", timeout=3)
         except requests.exceptions.ConnectionError:
             print("A API " + nome + " nao esta no ar em " + url)
-            print("Abra dois terminais e rode: python rodar_antes.py  e  python rodar_depois.py")
+            print("Abra dois terminais e rode: python servidor.py --modo vulneravel  e  python servidor.py --modo seguro")
             sys.exit(1)
 
 

@@ -14,7 +14,7 @@
 #   9. segredos no .env e todos os eventos no auditoria_seguranca.log
 #  10. /docs desligado (menos superficie exposta)
 #
-# Rodar: python rodar_depois.py   (porta 8001, dados em dados_depois/)
+# Rodar: python servidor.py --modo seguro   (porta 8001, dados em dados_seguro/)
 
 import json
 from datetime import datetime

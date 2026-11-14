@@ -1,5 +1,5 @@
 .env
 __pycache__/
-dados_antes/
-dados_depois/
+dados_vulneravel/
+dados_seguro/
 *.bak

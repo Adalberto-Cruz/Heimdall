@@ -7,25 +7,24 @@
 | `app_seguro.py` | API blindada (o "depois") |
 | `seguranca.py` | HMAC, anti-replay, limite de requisicoes, CSV injection, plausibilidade, auditoria |
 | `gerar_env.py` | cria o `.env` com chaves aleatorias |
-| `rodar_antes.py` | sobe a `app.py` (sem protecao) na porta 8000, dados em `dados_antes/` |
-| `rodar_depois.py` | sobe a `app_seguro.py` na porta 8001, dados em `dados_depois/` |
-| `validador_ataques_cyber.py` | ataca as duas e gera a tabela Antes vs Depois (`resultado_validacao.md`) |
+| `servidor.py` | sobe a API no modo `vulneravel` (`app.py`, porta 8000, `dados_vulneravel/`) ou `seguro` (`app_seguro.py`, porta 8001, `dados_seguro/`) |
+| `simulacao_ataques.py` | ataca as duas e gera a tabela Antes vs Depois (`resultado_validacao.md`) |
 | `ia_seguranca.py` | protecoes dos componentes de IA: remove EXIF/GPS das fotos, supervisao humana do diagnostico, filtro contra dados envenenados |
-| `demo_ia_seguranca.py` | mostra as 3 protecoes de IA funcionando |
+| `simulacao_ia.py` | mostra as 3 protecoes de IA funcionando |
 | `test_ia_seguranca.py` | 13 testes das protecoes de IA |
 
-Os ataques usam pastas proprias (`dados_antes/`, `dados_depois/`), entao nao sujam os dados oficiais em `dados/`.
+Os ataques usam pastas proprias (`dados_vulneravel/`, `dados_seguro/`), entao nao sujam os dados oficiais em `dados/`.
 
 ## Como rodar a demonstracao
 
 ```
 python gerar_env.py                  # uma vez so
-python rodar_antes.py                # terminal 1
-python rodar_depois.py               # terminal 2
-python validador_ataques_cyber.py    # terminal 3 (leva ~1 min no final)
+python servidor.py --modo vulneravel   # terminal 1
+python servidor.py --modo seguro       # terminal 2
+python simulacao_ataques.py            # terminal 3 (leva ~1 min no final)
 ```
 
-Pra rodar o validador de novo, espere 1 minuto (limite de requisicoes) e apague as pastas `dados_antes/` e `dados_depois/` se quiser comecar limpo.
+Pra rodar a simulacao de novo, espere 1 minuto (limite de requisicoes) e apague as pastas `dados_vulneravel/` e `dados_seguro/` se quiser comecar limpo.
 
 ## Defesas e o que cada uma bloqueia
 
@@ -51,7 +50,7 @@ Pra rodar o validador de novo, espere 1 minuto (limite de requisicoes) e apague 
 | Dados envenenados no treino do ML (valor impossivel, rotulo inventado, formula, campo extra) | so leitura assinada e validada entra no JSONL; `filtrar_jsonl_para_treino` confere de novo antes do treino | `app_seguro.py` + `ia_seguranca.py` |
 
 ```
-python demo_ia_seguranca.py
+python simulacao_ia.py
 python -m unittest test_ia_seguranca -v
 ```
 

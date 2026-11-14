@@ -1,6 +1,6 @@
-# demo_ia_seguranca.py
+# simulacao_ia.py
 # Mostra as 3 protecoes de IA funcionando (prints para o PDF de Cyber).
-# Uso: python demo_ia_seguranca.py
+# Uso: python simulacao_ia.py
 
 import json
 import os

@@ -10,6 +10,9 @@
 | `rodar_antes.py` | sobe a `app.py` (sem protecao) na porta 8000, dados em `dados_antes/` |
 | `rodar_depois.py` | sobe a `app_seguro.py` na porta 8001, dados em `dados_depois/` |
 | `validador_ataques_cyber.py` | ataca as duas e gera a tabela Antes vs Depois (`resultado_validacao.md`) |
+| `ia_seguranca.py` | protecoes dos componentes de IA: remove EXIF/GPS das fotos, supervisao humana do diagnostico, filtro contra dados envenenados |
+| `demo_ia_seguranca.py` | mostra as 3 protecoes de IA funcionando |
+| `test_ia_seguranca.py` | 13 testes das protecoes de IA |
 
 Os ataques usam pastas proprias (`dados_antes/`, `dados_depois/`), entao nao sujam os dados oficiais em `dados/`.
 
@@ -38,6 +41,19 @@ Pra rodar o validador de novo, espere 1 minuto (limite de requisicoes) e apague 
 | GET /sensores/status | sensor que parou de mandar dados (perda de visibilidade) | alerta |
 | `.env` + `auditoria_seguranca.log` | segredo no codigo, ataque sem rastro | - |
 | `/docs` desligado | mapa da API exposto | - |
+
+## Componentes de IA
+
+| Risco | Protecao | Onde |
+|---|---|---|
+| Foto da folha entrega a localizacao da propriedade (GPS no EXIF) | `remover_metadados` copia so os pixels; recusa arquivo falso, vazio, gigante ou de formato estranho | `ia_seguranca.py` |
+| CNN erra com confianca baixa e o produtor joga fora um lote bom (ou guarda um doente) | `decidir_diagnostico`: abaixo de 0,75 a decisao vai pro tecnico agricola | `ia_seguranca.py` |
+| Dados envenenados no treino do ML (valor impossivel, rotulo inventado, formula, campo extra) | so leitura assinada e validada entra no JSONL; `filtrar_jsonl_para_treino` confere de novo antes do treino | `app_seguro.py` + `ia_seguranca.py` |
+
+```
+python demo_ia_seguranca.py
+python -m unittest test_ia_seguranca -v
+```
 
 ## Para o Gustavo: como o ESP32 assina cada envio
 

@@ -1,0 +1,30 @@
+FIAP - Global Solution 2026.2 (CitizenTech)
+Plataformas e Servicos Cognitivos - Arquitetura Medalhao na AWS
+
+Projeto:      Heimdall - o vigia que protege o alimento do campo a mesa
+Turma:        Tecnologo em Inteligencia Artificial - 1TIAPY
+
+Integrantes:
+  Adalberto Alves Cruz            RM574115
+  Danilo Keithi Makiya Nakasone   RM574137
+  Gustavo da Silva Nascimento     RM570821
+
+Video (YouTube, nao listado):
+  https://youtu.be/giiDRl5nLe4
+
+Repositorio do projeto:
+  https://github.com/Adalberto-Cruz/Heimdall
+
+O que o video demonstra (AWS Academy Learner Lab, usuario logado):
+  1. Bucket S3 heimdall-datalake-sensores com as pastas raw, bronze, silver, gold e resultados-athena
+  2. Database dbheimdall no AWS Glue
+  3. Crawler crawler_dados_brutos lendo raw/ e gerando a tabela raw
+  4. Athena configurado para salvar os resultados em resultados-athena/
+  5. Tabela bronze criada por CTAS (Parquet, em bronze/), com a coluna data_ingestao
+  6. Job ETL visual job_bronze_para_silver: mantem id_sensor, fazenda e umidade (Parquet, em silver/)
+  7. Job ETL visual job_silver_para_gold: media de umidade por id_sensor e fazenda (Parquet, em gold/)
+  8. Comprovacao no Athena com SELECT e COUNT(*): silver com 50 linhas e gold com 14
+
+Dados: as 50 leituras de sensores do Heimdall (leituras_sensores.jsonl), geradas pela API Python
+do grupo no mesmo contrato JSON enviado pelo ESP32. A camada gold entrega a umidade media por
+sensor e fazenda, a visao que cooperativas e redes de varejo usam para acompanhar seus fornecedores.

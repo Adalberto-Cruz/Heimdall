@@ -4,6 +4,8 @@
 
 Visão, públicos, papel de cada disciplina e regras de entrega: [`CONTEXTO_HEIMDALL.md`](CONTEXTO_HEIMDALL.md).
 
+Quadro Kanban do projeto (Trello): https://trello.com/b/ZerD4f4V/heimdall-gs-20262
+
 Global Solution 2026.2 (CitizenTech) - FIAP - Tecnólogo em Inteligência Artificial, turma 1TIAPY
 
 | Integrante | RM | Disciplinas |

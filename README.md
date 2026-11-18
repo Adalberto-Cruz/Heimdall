@@ -2,6 +2,8 @@
 
 **O vigia que protege o alimento do campo à mesa.**
 
+Visão, públicos, papel de cada disciplina e regras de entrega: [`CONTEXTO_HEIMDALL.md`](CONTEXTO_HEIMDALL.md).
+
 Global Solution 2026.2 (CitizenTech) - FIAP - Tecnólogo em Inteligência Artificial, turma 1TIAPY
 
 | Integrante | RM | Disciplinas |

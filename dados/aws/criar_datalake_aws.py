@@ -460,6 +460,10 @@ def main():
         comprovar(athena, args.arquivo)
     except (ClientError, BotoCoreError) as e:
         print("\nA AWS recusou um passo: " + erro_aws(e))
+        if "voc-cancel-cred" in erro_aws(e):
+            print("A sessao do Learner Lab acabou e as credenciais foram canceladas.")
+            print("Clique em Start Lab de novo, copie o AWS Details atualizado para o credentials e rode outra vez.")
+            sys.exit(1)
         print("Se for AccessDenied, o Learner Lab bloqueou esse servico. Se for token, copie as credenciais de novo.")
         sys.exit(1)
 

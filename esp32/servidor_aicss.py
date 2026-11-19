@@ -24,7 +24,7 @@ CAMPOS = [
     "status_reservatorio", "bomba", "risco_perda_lote", "motivo", "data_hora",
 ]
 
-app = FastAPI(title="Rega Certa - servidor AICSS")
+app = FastAPI(title="Heimdall - servidor AICSS")
 
 
 class Leitura(BaseModel):

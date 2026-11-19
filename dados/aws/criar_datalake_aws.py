@@ -281,9 +281,19 @@ def limpar_prefixo(s3, bucket, prefixo):
             s3.delete_objects(Bucket=bucket, Delete={"Objects": objs})
 
 
-def criar_bronze(athena, s3, bucket):
+def apagar_tabela(glue, nome):
+    # apaga direto no catalogo do Glue (o DROP do Athena as vezes nao remove tabela antiga do Glue)
+    try:
+        glue.delete_table(DatabaseName=DATABASE, Name=nome)
+        print("  tabela antiga " + nome + " removida do catalogo")
+    except ClientError as e:
+        if e.response["Error"]["Code"] != "EntityNotFoundException":
+            raise
+
+
+def criar_bronze(athena, glue, s3, bucket):
     passo("Bronze por CTAS (Parquet em bronze/, com data_ingestao)")
-    athena.sql("DROP TABLE IF EXISTS bronze")
+    apagar_tabela(glue, "bronze")
     limpar_prefixo(s3, bucket, "bronze/")
     athena.sql(
         "CREATE TABLE bronze WITH (format = 'PARQUET', external_location = 's3://" + bucket + "/bronze/') AS "
@@ -292,14 +302,14 @@ def criar_bronze(athena, s3, bucket):
     print("Bronze criada")
 
 
-def criar_tabelas_destino(athena, bucket):
+def criar_tabelas_destino(athena, glue, bucket):
     passo("Tabelas silver e gold no catalogo (Parquet, sem particao)")
-    athena.sql("DROP TABLE IF EXISTS silver")
+    apagar_tabela(glue, "silver")
     athena.sql(
         "CREATE EXTERNAL TABLE silver (id_sensor string, fazenda string, umidade double) "
         "STORED AS PARQUET LOCATION 's3://" + bucket + "/silver/'"
     )
-    athena.sql("DROP TABLE IF EXISTS gold")
+    apagar_tabela(glue, "gold")
     athena.sql(
         "CREATE EXTERNAL TABLE gold (id_sensor string, fazenda string, media_umidade double) "
         "STORED AS PARQUET LOCATION 's3://" + bucket + "/gold/'"
@@ -437,8 +447,8 @@ def main():
         rodar_crawler(glue, bucket, role)
         athena = Athena(sessao.client("athena"), bucket)
         athena.configurar()
-        criar_bronze(athena, s3, bucket)
-        criar_tabelas_destino(athena, bucket)
+        criar_bronze(athena, glue, s3, bucket)
+        criar_tabelas_destino(athena, glue, bucket)
         passo("Jobs ETL do Glue (bronze > silver > gold)")
         criar_job(glue, s3, bucket, role, JOB_SILVER, SCRIPT_SILVER, "silver")
         criar_job(glue, s3, bucket, role, JOB_GOLD, SCRIPT_GOLD, "gold")

@@ -1,1 +1,41 @@
-https://www.youtube.com/watch?v=CHuU_Hz5CAs
+FIAP - Global Solution 2026.2 (CitizenTech)
+Machine Learning & Modelling
+
+Projeto:      Heimdall - o vigia que protege o alimento do campo a mesa
+Turma:        Tecnologo em Inteligencia Artificial - 1TIAPY
+
+Integrantes:
+  Adalberto Alves Cruz            RM574115
+  Danilo Keithi Makiya Nakasone   RM574137
+  Gustavo da Silva Nascimento     RM570821
+
+Video pitch (YouTube, nao listado):
+  https://www.youtube.com/watch?v=CHuU_Hz5CAs
+
+Repositorio do projeto:
+  https://github.com/Adalberto-Cruz/Heimdall
+
+Arquivos da entrega:
+  Heimdall_ML_COMPLETO.ipynb      notebook completo (EDA, modelagem, tuning, avaliacao e aplicacao)
+  Apresentacao_Heimdall_ML.pdf    slides pedidos no enunciado (entregavel 2)
+  video_pitch.txt                 este arquivo, com o link do video (entregavel 3)
+
+O que o notebook entrega:
+  1. Problema e publico: prever a umidade do solo a 10 cm para as proximas 24 h,
+     para o produtor irrigar na hora certa e a cooperativa ver o risco de cada fazenda
+     (elo 1 do Heimdall, a irrigacao no campo)
+  2. Dados reais do CEMADEN (Mendeley Data, DOI 10.17632/xrk5rfcpvg.2, CC BY 4.0):
+     18.280 registros validos de 9 estacoes, com analise de dados ausentes
+  3. Pre-processamento com separacao temporal entre treino e teste, sem data leakage
+  4. Modelos comparados: baseline de persistencia, Ridge e Random Forest
+  5. Tuning com GridSearchCV e validacao temporal
+  6. Modelo final: Ridge otimizado (alpha = 10)
+     - RMSE de teste 0,01329 m3/m3, contra 0,01426 do baseline (cerca de 6,8% menor)
+     - R2 de teste 0,919; o baseline teve MAE um pouco menor, e isso esta documentado
+  7. Importancia das variaveis e simulacao da recomendacao de irrigacao
+  8. Integracao com o Heimdall: a mesma leitura do ESP32 que passa pela API alimenta
+     a previsao, e o resultado vira alerta de solo seco para o produtor
+
+Implementado e evolucao:
+  Implementado: modelo treinado, avaliado e demonstrado no notebook.
+  Evolucao: rodar a previsao direto na API com as leituras dos sensores reais.

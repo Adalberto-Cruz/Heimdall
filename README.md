@@ -28,7 +28,7 @@ Global Solution 2026.2 (CitizenTech) - FIAP - Tecnólogo em Inteligência Artifi
 | Cognitive Cybersecurity | Adalberto | [`api/Heimdall_Cybersecurity.pdf`](api/Heimdall_Cybersecurity.pdf), [`api/SEGURANCA.md`](api/SEGURANCA.md) e `api/simulacao_ataques.py` | - |
 | AI Challenge | Adalberto | [`docs/ai-challenge/Heimdall_AI_Challenge.txt`](docs/ai-challenge/Heimdall_AI_Challenge.txt), [`docs/uml/`](docs/uml/) e o Trello | https://youtu.be/KBdnkQSYrhw |
 | AI Computer Systems & Sensors | Gustavo | [`esp32/Heimdall_AICSS.pdf`](esp32/Heimdall_AICSS.pdf) e o código em [`esp32/`](esp32/) | - |
-| Machine Learning & Modelling | Gustavo | [`machine-learning/`](machine-learning/) (notebook, slides e txt) | https://www.youtube.com/watch?v=CHuU_Hz5CAs |
+| Machine Learning & Modelling | Gustavo | [`machine-learning/`](machine-learning/) (notebook, slides e txt) | https://youtu.be/EcBGslhsGNM |
 | Redes Neurais | Gustavo | [`redes-neurais/`](redes-neurais/) (notebook e txt) | https://youtu.be/HZcez2AGM7M |
 | Cognitive Data Science (Databricks) | Danilo | [`dados/databricks/`](dados/databricks/) | - |
 | Plataformas Cognitivas (AWS) | Danilo | [`dados/aws/`](dados/aws/) (txt e script que recria o Data Lake) | https://youtu.be/giiDRl5nLe4 |

@@ -10,7 +10,7 @@ Integrantes:
   Gustavo da Silva Nascimento     RM570821
 
 Video pitch (YouTube, nao listado):
-  https://www.youtube.com/watch?v=CHuU_Hz5CAs
+  https://youtu.be/EcBGslhsGNM
 
 Repositorio do projeto:
   https://github.com/Adalberto-Cruz/Heimdall

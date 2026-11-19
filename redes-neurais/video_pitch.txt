@@ -1,0 +1,40 @@
+FIAP - Global Solution 2026.2 (CitizenTech)
+Redes Neurais Artificiais, Deep Learning e Algoritmos Geneticos
+
+Projeto:      Heimdall - o vigia que protege o alimento do campo a mesa
+Turma:        Tecnologo em Inteligencia Artificial - 1TIAPY
+
+Integrantes:
+  Adalberto Alves Cruz            RM574115
+  Danilo Keithi Makiya Nakasone   RM574137
+  Gustavo da Silva Nascimento     RM570821
+
+Video (YouTube, nao listado):
+  https://youtu.be/HZcez2AGM7M
+
+Repositorio do projeto:
+  https://github.com/Adalberto-Cruz/Heimdall
+
+Arquivos da entrega:
+  GS_Redes_Neurais_Heimdall.ipynb   notebook completo, executado no Google Colab (GPU T4)
+
+O que o notebook entrega:
+  1. Problema e aplicacao: triagem de folhas de tomate (saudavel, pinta-preta e requeima),
+     o elo 2 do Heimdall, a saude da lavoura
+  2. Dataset PlantVillage: 900 imagens (300 por classe), divididas em treino 630,
+     validacao 135 e teste 135
+  3. Quatro configuracoes comparadas: CNN simples, CNN melhorada (augmentation, Dropout
+     e BatchNormalization), MobileNetV2 com transfer learning e MobileNetV2 otimizada
+  4. Busca de hiperparametros na MobileNetV2: learning rate, neuronios e batch size,
+     com early stopping, escolhendo sempre pela validacao
+  5. Modelo escolhido: MobileNetV2 otimizada (lr 0,001, 128 neuronios, batch 32)
+     - validacao 93,33%, teste 92,59%, F1 macro 0,926 (125 acertos em 135 imagens)
+  6. Matriz de confusao, precision, recall e F1 por classe, com analise das limitacoes
+  7. Demonstracao funcional com imagens nunca usadas no treino e upload de foto propria:
+     classe prevista, confianca e orientacao; abaixo de 75% ou com doenca, pede um tecnico
+  8. Integracao com o Heimdall: a foto da folha entra na mesma API que recebe as leituras
+     do ESP32, para a fazenda ver no mesmo painel o alerta de solo seco e o de doenca
+
+Implementado e evolucao:
+  Implementado: treino, comparacao, otimizacao, avaliacao e demonstracao no notebook.
+  Evolucao: envio da foto pelo celular do produtor e registro do resultado na API.

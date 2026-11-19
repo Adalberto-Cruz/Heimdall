@@ -30,10 +30,10 @@ O que o notebook entrega:
      e BatchNormalization), MobileNetV2 com transfer learning e MobileNetV2 otimizada
   4. Busca de hiperparametros na MobileNetV2: learning rate, neuronios e batch size,
      com early stopping, escolhendo sempre pela validacao
-  5. Modelo escolhido: MobileNetV2 otimizada (lr 0,001, 128 neuronios, batch 32)
-     - validacao 93,33%, teste 92,59%, F1 macro 0,926 (125 acertos em 135 imagens)
+  5. Modelo escolhido: MobileNetV2 otimizada (lr 0,0005, 128 neuronios, batch 32)
+     - validacao 95,56%, teste 91,85%, F1 macro 0,918 (124 acertos em 135 imagens)
   6. Matriz de confusao, precision, recall e F1 por classe, com analise das limitacoes
-  7. Demonstracao funcional com imagens nunca usadas no treino e upload de foto propria:
+  7. Demonstracao funcional com imagens nunca usadas no treino e celula de upload de foto propria:
      classe prevista, confianca e orientacao; abaixo de 75% ou com doenca, pede um tecnico
   8. Integracao com o Heimdall: a foto da folha entra na mesma API que recebe as leituras
      do ESP32, para a fazenda ver no mesmo painel o alerta de solo seco e o de doenca

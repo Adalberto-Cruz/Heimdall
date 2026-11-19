@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLSequenceAllInOne</id>
+    <coordinates>
+      <x>20</x>
+      <y>20</y>
+      <w>1500</w>
+      <h>720</h>
+    </coordinates>
+    <panel_attributes>title=Heimdall - uma leitura, do sensor à previsão
+obj=Sensor ESP32~esp
+obj=API Python~api
+obj=Base CSV e JSONL~base
+obj=Databricks e AWS~lake
+obj=Modelo de previsão~ml
+
+esp-&gt;&gt;&gt;api : 1. envia a leitura assinada (POST /leituras); on=api
+combinedFragment=alt~alt1 esp api; esp:[assinatura válida]
+api.&gt;esp : 2. 200: leitura aceita e decisão da bomba
+..=alt1; esp:[leitura falsa ou repetida]
+api.&gt;esp : 401: recusada (429 se passar do limite)
+--=alt1
+api-&gt;&gt;&gt;base : 3. grava a leitura; off=api
+base-&gt;&gt;&gt;lake : 4. camadas Bronze, Silver e Gold
+lake-&gt;&gt;&gt;ml : 5. histórico de umidade
+ml.&gt;lake : 6. previsão de 24 h</panel_attributes>
+    <additional_attributes></additional_attributes>
+  </element>
+</diagram>

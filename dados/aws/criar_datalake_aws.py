@@ -452,8 +452,11 @@ def main():
         passo("Jobs ETL do Glue (bronze > silver > gold)")
         criar_job(glue, s3, bucket, role, JOB_SILVER, SCRIPT_SILVER, "silver")
         criar_job(glue, s3, bucket, role, JOB_GOLD, SCRIPT_GOLD, "gold")
-        rodar_job(glue, JOB_SILVER)
-        rodar_job(glue, JOB_GOLD)
+        # o job visual so acrescenta arquivos, entao limpa a pasta antes pra nao duplicar nem sobrar lixo
+        for pasta_destino, job in (("silver/", JOB_SILVER), ("gold/", JOB_GOLD)):
+            limpar_prefixo(s3, bucket, pasta_destino)
+            s3.put_object(Bucket=bucket, Key=pasta_destino)
+            rodar_job(glue, job)
         comprovar(athena, args.arquivo)
     except (ClientError, BotoCoreError) as e:
         print("\nA AWS recusou um passo: " + erro_aws(e))

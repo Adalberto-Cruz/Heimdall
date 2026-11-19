@@ -6,3 +6,7 @@ dados_seguro/
 api/dados/
 *.bak
 .ipynb_checkpoints/
+
+# credenciais do Learner Lab (AWS)
+credenciais.txt
+credentials

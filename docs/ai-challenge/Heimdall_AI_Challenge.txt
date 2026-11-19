@@ -1,0 +1,44 @@
+FIAP - Global Solution 2026.2 (CitizenTech)
+AI Challenge - Video Integrador
+
+Projeto:      Heimdall - o vigia que protege o alimento do campo a mesa
+Turma:        Tecnologo em Inteligencia Artificial - 1TIAPY
+
+Integrantes:
+  Adalberto Alves Cruz            RM574115
+  Danilo Keithi Makiya Nakasone   RM574137
+  Gustavo da Silva Nascimento     RM570821
+
+Video (YouTube, nao listado, 6:59):
+  https://youtu.be/KBdnkQSYrhw
+
+Repositorio do projeto:
+  https://github.com/Adalberto-Cruz/Heimdall
+
+Quadro Kanban (Trello):
+  https://trello.com/b/ZerD4f4V/heimdall-gs-20262
+
+Diagramas UML (feitos no UMLetino, arquivos .uxf e imagens):
+  https://github.com/Adalberto-Cruz/Heimdall/tree/main/docs/uml
+
+O que o video mostra (tempos aproximados):
+  0:00  Capa com nomes e RMs
+  0:21  O tamanho do problema: desperdicio de alimentos e inseguranca alimentar
+  0:42  As 5 perguntas do painel da Live de 04/11/2026
+  0:56  Como o Heimdall responde a cada pergunta
+  1:17  Publicos: do agricultor familiar ao supermercado
+  1:31  Os quatro elos da cadeia e a seguranca em todos eles
+  1:45  Diagrama de componentes (UML)
+  1:59  Contrato JSON unico que integra as nove disciplinas
+  2:13  Ao vivo: ESP32 no Wokwi, API recebendo o JSON e ataques bloqueados
+  4:12  Ao vivo: Databricks (Bronze, Silver e Gold) e AWS (S3, Glue e Athena)
+  5:15  Ao vivo: estatistica, Machine Learning e Redes Neurais
+  6:04  Diagrama de sequencia e diagrama de casos de uso (UML)
+  6:25  Kanban: divisao das entregas entre os tres integrantes
+  6:39  Impacto, ODS e proximos passos
+  6:53  Encerramento com nomes e RMs
+
+Disciplinas integradas no video:
+  Adalberto: Computational Thinking with Python, Cognitive Cybersecurity, AI Challenge
+  Danilo:    Cognitive Data Science (Databricks), Plataformas Cognitivas (AWS), Statistical Computing
+  Gustavo:   AI Computer Systems & Sensors (ESP32), Machine Learning, Redes Neurais

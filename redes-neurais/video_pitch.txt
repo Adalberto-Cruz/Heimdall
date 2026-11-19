@@ -15,6 +15,9 @@ Video (YouTube, nao listado):
 Repositorio do projeto:
   https://github.com/Adalberto-Cruz/Heimdall
 
+Quadro Kanban (Trello):
+  https://trello.com/b/ZerD4f4V/heimdall-gs-20262
+
 Arquivos da entrega:
   GS_Redes_Neurais_Heimdall.ipynb   notebook completo, executado no Google Colab (GPU T4)
 

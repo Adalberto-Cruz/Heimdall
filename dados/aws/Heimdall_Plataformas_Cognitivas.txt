@@ -15,6 +15,9 @@ Video (YouTube, nao listado):
 Repositorio do projeto:
   https://github.com/Adalberto-Cruz/Heimdall
 
+Quadro Kanban (Trello):
+  https://trello.com/b/ZerD4f4V/heimdall-gs-20262
+
 O que o video demonstra (AWS Academy Learner Lab, usuario logado):
   1. Bucket S3 heimdall-datalake-sensores com as pastas raw, bronze, silver, gold e resultados-athena
   2. Database dbheimdall no AWS Glue

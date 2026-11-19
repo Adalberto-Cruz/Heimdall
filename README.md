@@ -4,10 +4,6 @@
 
 Visão, públicos, papel de cada disciplina e regras de entrega: [`CONTEXTO_HEIMDALL.md`](CONTEXTO_HEIMDALL.md).
 
-Quadro Kanban do projeto (Trello): https://trello.com/b/ZerD4f4V/heimdall-gs-20262
-
-Video integrador (AI Challenge): https://youtu.be/KBdnkQSYrhw
-
 Global Solution 2026.2 (CitizenTech) - FIAP - Tecnólogo em Inteligência Artificial, turma 1TIAPY
 
 | Integrante | RM | Disciplinas |
@@ -15,6 +11,28 @@ Global Solution 2026.2 (CitizenTech) - FIAP - Tecnólogo em Inteligência Artifi
 | Adalberto Alves Cruz | RM574115 | Computational Thinking with Python, Cognitive Cybersecurity, AI Challenge |
 | Danilo Keithi Makiya Nakasone | RM574137 | Cognitive Data Science (Databricks), Plataformas Cognitivas (AWS), Statistical Computing with R & Python |
 | Gustavo da Silva Nascimento | RM570821 | AI Computer Systems & Sensors, Machine Learning, Redes Neurais |
+
+## Links do projeto
+
+| O que | Link |
+|---|---|
+| Vídeo integrador (AI Challenge) | https://youtu.be/KBdnkQSYrhw |
+| Quadro Kanban (Trello) | https://trello.com/b/ZerD4f4V/heimdall-gs-20262 |
+| Diagramas UML (UMLetino) | [`docs/uml/`](docs/uml/) |
+
+## Entregas por disciplina
+
+| Disciplina | Responsável | Entrega no repositório | Vídeo |
+|---|---|---|---|
+| Computational Thinking with Python | Adalberto | [`api/Heimdall_API_REST_Python.pdf`](api/Heimdall_API_REST_Python.pdf) e o código em [`api/`](api/) | - |
+| Cognitive Cybersecurity | Adalberto | [`api/Heimdall_Cybersecurity.pdf`](api/Heimdall_Cybersecurity.pdf), [`api/SEGURANCA.md`](api/SEGURANCA.md) e `api/simulacao_ataques.py` | - |
+| AI Challenge | Adalberto | [`docs/ai-challenge/Heimdall_AI_Challenge.txt`](docs/ai-challenge/Heimdall_AI_Challenge.txt), [`docs/uml/`](docs/uml/) e o Trello | https://youtu.be/KBdnkQSYrhw |
+| AI Computer Systems & Sensors | Gustavo | [`esp32/Heimdall_AICSS.pdf`](esp32/Heimdall_AICSS.pdf) e o código em [`esp32/`](esp32/) | - |
+| Machine Learning & Modelling | Gustavo | [`machine-learning/`](machine-learning/) (notebook, slides e txt) | https://www.youtube.com/watch?v=CHuU_Hz5CAs |
+| Redes Neurais | Gustavo | [`redes-neurais/`](redes-neurais/) (notebook e txt) | https://youtu.be/HZcez2AGM7M |
+| Cognitive Data Science (Databricks) | Danilo | [`dados/databricks/`](dados/databricks/) | - |
+| Plataformas Cognitivas (AWS) | Danilo | [`dados/aws/`](dados/aws/) (txt e script que recria o Data Lake) | https://youtu.be/giiDRl5nLe4 |
+| Statistical Computing with R & Python | Danilo | [`dados/estatistica/`](dados/estatistica/) | - |
 
 ## O problema
 
@@ -54,7 +72,7 @@ Motivos possíveis, em ordem de prioridade: `BLOQUEIO_RESERVATORIO_BAIXO`, `ALER
 | [`machine-learning/`](machine-learning/) | previsão da umidade do solo em 24 h (base CEMADEN) | Gustavo |
 | [`redes-neurais/`](redes-neurais/) | CNN para doenças foliares do tomate (PlantVillage) | Gustavo |
 | [`dados/`](dados/) | arquivo oficial de leituras, Databricks, AWS e estatística | Danilo |
-| [`docs/`](docs/) | diagramas UML, Kanban e roteiro do vídeo integrador | Adalberto |
+| [`docs/`](docs/) | diagramas UML (UMLetino) e o txt de entrega do AI Challenge | Adalberto |
 
 ## Como rodar a API
 

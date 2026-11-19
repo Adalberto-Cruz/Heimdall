@@ -15,6 +15,9 @@ Video pitch (YouTube, nao listado):
 Repositorio do projeto:
   https://github.com/Adalberto-Cruz/Heimdall
 
+Quadro Kanban (Trello):
+  https://trello.com/b/ZerD4f4V/heimdall-gs-20262
+
 Arquivos da entrega:
   Heimdall_ML_COMPLETO.ipynb      notebook completo (EDA, modelagem, tuning, avaliacao e aplicacao)
   Apresentacao_Heimdall_ML.pdf    slides pedidos no enunciado (entregavel 2)
